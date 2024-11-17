@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    padding: 1em 1em 0 1em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    gap: 1em;
+}
+
+.sidebar {
+    background-color: #000;
+    width: 340px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.main-content {
+    background-color: #121212;
+    flex-grow: 1;
+    border-radius: 1rem;
+    overflow: auto;
+}
+
+.music-player {
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    bottom: 0;
+    width: calc(100vw - 2em);
+    height: 72px;
+    display: flex;
+    gap: 1em;
+}
+
+/* ############## sidebar styling ################### */
+.nav {
+    background-color: #121212;
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.nav i {
+    font-size: 25px;
+}
+
+.logo, .nav-option {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    gap: 0.2em;
+}
+
+.nav-option {
+    gap: 1em;
+}
+
+.nav-option:last-child i, .nav-option:last-child a {
+    opacity: 0.5;
+    transition: opacity 0.2s linear;
+}
+
+.nav-option:last-child:hover i, .nav-option:last-child:hover a {
+    opacity: 1;
+}
+
+/* ################ library styling ################# */
+.library {
+    height: 100%;
+}
+.lib-option img {
+    width: 25px;
+    height: 25px;
+}
+
+.lib-option i {
+    font-size: 25px;
+}
+
+.lib-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lib-option:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.lib-option {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.1s linear;
+}
+
+.lib-option:hover {
+    opacity: 1;
+}
+
+.lib-box {
+    background: #242424;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.lib-boxes p:first-child {
+    font-weight: 600;
+}
+
+.lib-boxes p {
+    margin-bottom: 10px;
+}
+
+.lib-boxes button {
+    padding: 0.6em 2em;
+    border-radius: 50em;
+    color: black;
+    font-weight: 600;
+    margin-top: 0.8em;
+}
+
+.lib-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    height: 270px;
+    overflow: auto;
+}
+
+.info {
+    margin-top: 1em;
+}
+
+.info-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.info-desc a {
+    font-weight: 100;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.info-desc div {
+    display: flex;
+    gap: 1em;
+}
+
+.info-btn {
+    margin-top: 2em;
+}
+
+.info-btn button {
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    padding: 0.5em 1em;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10em;
+    cursor: pointer;
+    transition: box-shadow, border-color,  0.1s linear;
+}
+
+.info-btn button:hover {
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.357);
+}
+
+.info-btn button i {
+    font-size: 20px;
+}
+
+/* ################### main-content styling ################### */
+.main-content {
+    /* padding: 1em; */
+}
+
+.sticky-nav {
+    background-color: #121212;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    /* z-index: 1; */
+}
+
+.sticky-nav-options {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.sticky-nav-icons img {
+    background-color: black;
+    margin-right: 0.5em;
+    padding: 0.2em;
+    border-radius: 50em;
+    cursor: pointer;
+}
+
+.sticky-nav-icons img:last-child {
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+.sticky-nav-options button {
+    padding: 0.7em 1.2em;
+    border-radius: 50rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sticky-nav-options button:nth-child(2) {
+    background-color: black;
+    color: white;
+}
+
+.sticky-nav-options .fa-user {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    padding: 0.2em;
+    border-radius: 50em;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-left: 3em;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    background-color: #232323;
+    padding: 1em;
+    border-radius: 0.5rem;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.card:hover {
+    background-color: #303030;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card p:nth-child(2) {
+    font-weight: bold;
+}
+
+.card p:last-child {
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.main-content h2 {
+    margin: 2rem 0 0 1em;
+}
+
+.footer {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    border-top: 1px solid white;
+    opacity: 0.5;
+    width: 90%;
+    height: 50%;
+}
+
+/* ################# music-player styling #################### */
+.album {
+    flex-grow: 1;
+}
+.player {
+    flex-grow: 2;
+    padding: 0.5em 1em;
+}
+.controls {
+    padding: 1em;
+    flex-grow: 1;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.playback-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.playback-bar img {
+    width: 14px;
+    height: 14px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.playback-bar img:nth-child(3) {
+    width: 34px;
+    height: 34px;
+    opacity: 1;
+}
+
+.playback-bar img:hover {
+    opacity: 1;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.progress-bar span {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.progress-bar input {
+    width: 300px;
+}
+
+.progress-bar input[type="range"] {
+    appearance: none;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.584);
+}
+
+.album {
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.album img {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.5em;
+}
+
+.album p:first-child {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 0.5em;
+}
+
+.album p:last-child {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.controls i {
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.controls input[type="range"] {
+    appearance: none;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.584);
+}
+
+.controls i:hover {
+    opacity: 1;
+}
+
+/* ############### media queries ################ */
+@media (max-width: 1000px) {
+    .hide {
+        display: none;
+    }
+}
